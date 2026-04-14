@@ -56,16 +56,9 @@
       gap: 10px;
     }
     .nav-logo img {
-      height: 40px;
+      height: 44px;
       width: auto;
     }
-    .nav-logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-    }
-    .nav-logo-text span { color: var(--green); }
     .nav-links {
       display: flex;
       gap: 32px;
@@ -101,8 +94,21 @@
       position: relative;
       overflow: hidden;
     }
-    .hero-bg { display: none; }
-    .hero-overlay { display: none; }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('ai-golf-coach-home.png');
+      background-size: cover;
+      background-position: center top;
+      z-index: 0;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,12,8,0.55) 0%, rgba(6,12,8,0.85) 60%, var(--bg) 100%);
+      z-index: 1;
+    }
     .hero-content {
       position: relative;
       z-index: 2;
@@ -369,14 +375,6 @@
       border: 2px solid var(--green);
       object-fit: cover;
     }
-    .ace-avatar-fallback {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1a3a1a, #0d200d);
-      border: 2px solid var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-    }
     .ace-name { font-weight: 700; font-size: 1rem; }
     .ace-title-tag { font-size: 0.78rem; color: var(--green); font-weight: 500; }
     .ace-online {
@@ -607,12 +605,16 @@
     .legal-page.active { display: block; }
     .legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; margin-bottom: 6px; letter-spacing: -1px; }
     .legal-page .updated { font-size: 0.82rem; color: var(--text2); margin-bottom: 44px; }
-    .legal-page h2 { font-size: 1.05rem; font-weight: 700; margin: 32px 0 10px; color: var(--green); }
-    .legal-page p, .legal-page li { font-size: 0.92rem; color: var(--text2); line-height: 1.8; font-weight: 300; margin-bottom: 10px; }
-    .legal-page ul { padding-left: 18px; }
-    .legal-page li { margin-bottom: 5px; }
+    .legal-page .intro { font-size: 0.92rem; color: var(--text2); line-height: 1.8; margin-bottom: 32px; }
+    .legal-section { margin-bottom: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; }
+    .legal-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--green); }
+    .legal-section p, .legal-section li { font-size: 0.88rem; color: var(--text2); line-height: 1.8; font-weight: 300; margin-bottom: 8px; }
+    .legal-section ul { padding-left: 18px; }
+    .legal-section li { margin-bottom: 4px; }
+    .legal-sub-heading { font-size: 0.88rem; font-weight: 700; color: #CBD5E1; margin: 14px 0 6px; }
     .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: 0.875rem; font-weight: 600; margin-bottom: 28px; cursor: pointer; transition: gap 0.2s; }
     .back-btn:hover { gap: 12px; }
+    .legal-footer { font-size: 0.78rem; color: var(--text2); text-align: center; margin-top: 32px; padding-bottom: 40px; }
 
     /* ── Main site ── */
     #main-site { display: block; }
@@ -637,104 +639,25 @@
       .footer-inner { flex-direction: column; gap: 32px; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
+
     /* ── Screenshots ── */
-    .screenshots {
-      padding: 110px 0 0;
-      overflow: hidden;
-    }
-    .screenshots-header {
-      margin-bottom: 56px;
-    }
-    .screenshots-scroll {
-      width: 100%;
-      overflow-x: auto;
-      padding-bottom: 40px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
+    .screenshots { padding: 110px 0 0; overflow: hidden; }
+    .screenshots-header { margin-bottom: 56px; }
+    .screenshots-scroll { width: 100%; overflow-x: auto; padding-bottom: 40px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .screenshots-scroll::-webkit-scrollbar { display: none; }
-    .screenshots-track {
-      display: flex;
-      gap: 20px;
-      padding: 20px 48px 20px;
-      width: max-content;
-    }
-    .screenshot-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-    .screenshot-frame {
-      width: 200px;
-      border-radius: 32px;
-      border: 2px solid var(--green-border);
-      background: #000;
-      overflow: hidden;
-      box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(16,185,129,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .screenshot-frame:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 40px 60px rgba(0,0,0,0.6), 0 0 40px rgba(16,185,129,0.2);
-      border-color: var(--green);
-    }
-    .screenshot-frame img {
-      width: 100%;
-      display: block;
-      border-radius: 30px;
-    }
-    .screenshot-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text2);
-      letter-spacing: 0.3px;
-    }
+    .screenshots-track { display: flex; gap: 20px; padding: 20px 48px 20px; width: max-content; }
+    .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .screenshot-frame { width: 200px; border-radius: 32px; border: 2px solid var(--green-border); background: #000; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(16,185,129,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .screenshot-frame:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 40px 60px rgba(0,0,0,0.6), 0 0 40px rgba(16,185,129,0.2); border-color: var(--green); }
+    .screenshot-frame img { width: 100%; display: block; border-radius: 30px; }
+    .screenshot-label { font-size: 0.82rem; font-weight: 600; color: var(--text2); letter-spacing: 0.3px; }
 
     /* ── Phone mockup ── */
-    .phone-mockup {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .phone-frame {
-      width: 280px;
-      border-radius: 44px;
-      border: 3px solid var(--green-border);
-      background: #000;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(16,185,129,0.15);
-      position: relative;
-      overflow: hidden;
-    }
-    .phone-notch {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 6px;
-      background: #000;
-      border-radius: 3px;
-      z-index: 2;
-    }
-    .phone-screen-img {
-      width: 100%;
-      display: block;
-      border-radius: 42px;
-    }
-    .phone-glow {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%);
-      bottom: -80px;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
+    .phone-mockup { position: relative; display: flex; justify-content: center; align-items: center; }
+    .phone-frame { width: 280px; border-radius: 44px; border: 3px solid var(--green-border); background: #000; box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(16,185,129,0.15); position: relative; overflow: hidden; }
+    .phone-notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; background: #000; border-radius: 3px; z-index: 2; }
+    .phone-screen-img { width: 100%; display: block; border-radius: 42px; }
+    .phone-glow { position: absolute; width: 280px; height: 280px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); bottom: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: -1; }
   </style>
 </head>
 <body>
@@ -742,15 +665,14 @@
 <!-- ── Nav ── -->
 <nav>
   <div class="nav-logo">
-    <img src="logo.png" alt="AI Golf Coach Logo" onerror="this.style.display='none'" />
-    <div class="nav-logo-text">AI Golf<span>Pro</span></div>
+    <img src="aigolfpro-logo.png" alt="AI Golf Coach Logo" onerror="this.style.display='none'" />
   </div>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#ace">Meet Ace</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#waitlist">Get Early Access</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#0c7f797c7c637e784c6d656b63606a7c7e63226d7c7c">Contact</a></li>
+    <li><a href="mailto:aigolfcoach@proton.me">Contact</a></li>
   </ul>
   <a href="#waitlist" class="nav-cta">Join Waitlist</a>
 </nav>
@@ -783,16 +705,16 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat">
-          <div class="stat-num">7</div>
-          <div class="stat-label">AI Coaching Modes</div>
+          <div class="stat-num">200</div>
+          <div class="stat-label">Elite Lessons</div>
         </div>
         <div class="stat">
           <div class="stat-num">40+</div>
           <div class="stat-label">Fitness Exercises</div>
         </div>
         <div class="stat">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Week Program</div>
+          <div class="stat-num">8</div>
+          <div class="stat-label">Drill Phases</div>
         </div>
         <div class="stat">
           <div class="stat-num">∞</div>
@@ -816,29 +738,29 @@
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">200 Elite Lessons</div>
+          <p class="feature-desc">Ball striking, short game, course IQ, mental game — every facet of golf covered with 8-phase drill systems built by a PGA of Canada professional.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📡</div>
+          <div class="feature-title">Launch Monitor Analytics</div>
+          <p class="feature-desc">Log sessions from any launch monitor. Ace analyses ball speed, spin rate, attack angle, smash factor, and carry — giving you broadcast-style data visualisation instantly.</p>
+        </div>
+        <div class="feature-card reveal">
           <div class="feature-icon">🎥</div>
           <div class="feature-title">AI Video Swing Analysis</div>
           <p class="feature-desc">Upload swing videos and get frame-by-frame coaching from Ace. Identifies faults, connects them to your ball flight, and gives you specific drills to fix today.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">📡</div>
-          <div class="feature-title">AI Launch Monitor Coaching</div>
-          <p class="feature-desc">Log sessions from any launch monitor. Ace analyses ball speed, spin rate, attack angle, smash factor, and carry — giving you PGA-level data interpretation instantly.</p>
-        </div>
-        <div class="feature-card reveal">
           <div class="feature-icon">📊</div>
-          <div class="feature-title">AI Stats Analysis</div>
-          <p class="feature-desc">Track your game stats over time. Ace analyses trends, identifies your biggest scoring leaks, and builds a personalised improvement plan based on your actual data.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">🏌️</div>
-          <div class="feature-title">Practice Sessions & AI Drills</div>
-          <p class="feature-desc">Ace generates personalised practice plans with specific drills for your weaknesses. Log completions, track progress, and get AI analysis on your practice results.</p>
+          <div class="feature-title">Shot Dispersion Hub</div>
+          <p class="feature-desc">Top-down and face-on ball flight views, club gapping, progress tracking over time. Compare your data against tour pros. Your personal broadcast studio.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">📋</div>
-          <div class="feature-title">Live Scorecard & Round Analysis</div>
-          <p class="feature-desc">Track every round live with our digital scorecard. When you finish, Ace analyses your round — what worked, what didn't, and exactly what to focus on next time.</p>
+          <div class="feature-title">Live Scorecard & Round Replay</div>
+          <p class="feature-desc">Track every round live with GPS and digital scorecard. When you finish, Ace analyses your round — what worked, what didn't, and what to focus on next.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">💪</div>
@@ -861,51 +783,35 @@
     <div class="screenshots-scroll reveal">
       <div class="screenshots-track">
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen1.jpeg" alt="Stats & Round Tracking" />
-          </div>
+          <div class="screenshot-frame"><img src="screen1.jpeg" alt="Stats & Round Tracking" /></div>
           <div class="screenshot-label">Stats & Rounds</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen2.jpeg" alt="Launch Monitor" />
-          </div>
+          <div class="screenshot-frame"><img src="screen2.jpeg" alt="Launch Monitor" /></div>
           <div class="screenshot-label">Launch Monitor</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen3.jpeg" alt="Practice Drills" />
-          </div>
+          <div class="screenshot-frame"><img src="screen3.jpeg" alt="Practice Drills" /></div>
           <div class="screenshot-label">Practice & Drills</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen4.jpeg" alt="Live Scorecard" />
-          </div>
+          <div class="screenshot-frame"><img src="screen4.jpeg" alt="Live Scorecard" /></div>
           <div class="screenshot-label">Live Scorecard</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen5.jpeg" alt="Ask Ace AI Coach" />
-          </div>
+          <div class="screenshot-frame"><img src="screen5.jpeg" alt="Ask Ace AI Coach" /></div>
           <div class="screenshot-label">Ask Ace</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen6.jpeg" alt="Fitness & Mental Game" />
-          </div>
+          <div class="screenshot-frame"><img src="screen6.jpeg" alt="Fitness & Mental Game" /></div>
           <div class="screenshot-label">Fitness & Mind</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen7.jpeg" alt="Avatar Picker" />
-          </div>
+          <div class="screenshot-frame"><img src="screen7.jpeg" alt="Avatar Picker" /></div>
           <div class="screenshot-label">Personalise Ace</div>
         </div>
         <div class="screenshot-item">
-          <div class="screenshot-frame">
-            <img src="screen8.jpeg" alt="Practice Analytics" />
-          </div>
+          <div class="screenshot-frame"><img src="screen8.jpeg" alt="Practice Analytics" /></div>
           <div class="screenshot-label">Practice Analytics</div>
         </div>
       </div>
@@ -917,7 +823,7 @@
     <div class="container">
       <div class="ace-inner">
         <div>
-          <div class="section-eyebrow reveal">Your AI Golf Coachfessional</div>
+          <div class="section-eyebrow reveal">Your AI Golf Professional</div>
           <h2 class="section-title reveal">Meet Ace</h2>
           <p class="section-sub reveal">Ace is your personal AI golf coach — PGA-level expertise available 24/7. Ask anything. Get specific answers based on your game data, handicap, and goals. Ace knows your game better than anyone.</p>
           <div class="ace-capabilities reveal">
@@ -955,7 +861,7 @@
           <div class="phone-mockup">
             <div class="phone-frame">
               <div class="phone-notch"></div>
-              <img src="https://raw.githubusercontent.com/Aussie4811/aigolfcoach.app/main/hero-bg.png" alt="AI Golf Coach App" class="phone-screen-img" />
+              <img src="ai-golf-coach-home.png" alt="AI Golf Coach App" class="phone-screen-img" />
             </div>
             <div class="phone-glow"></div>
           </div>
@@ -972,15 +878,12 @@
         <h2 class="section-title">Start free.<br>Upgrade when ready.</h2>
         <p class="section-sub" style="margin: 0 auto 32px;">Less than one coffee a month. Less than 1/10th of a single golf lesson. Unlimited AI coaching, every day.</p>
       </div>
-
-      <!-- Toggle -->
       <div class="pricing-toggle reveal">
         <span class="toggle-label active" id="toggle-monthly">Monthly</span>
         <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"></div>
         <span class="toggle-label" id="toggle-annual">Annual</span>
         <span class="save-badge">Save 40%</span>
       </div>
-
       <div class="pricing-grid reveal">
         <!-- Free -->
         <div class="pricing-card">
@@ -989,6 +892,7 @@
           <div class="pricing-period">Forever free · No credit card needed</div>
           <div class="pricing-divider"></div>
           <ul class="pricing-features">
+            <li><span class="check">✓</span> 25 free lessons included</li>
             <li><span class="check">✓</span> 5 AI coaching sessions per day</li>
             <li><span class="check">✓</span> AI swing video analysis</li>
             <li><span class="check">✓</span> Launch monitor coaching</li>
@@ -996,9 +900,9 @@
             <li><span class="check">✓</span> Practice drills & planning</li>
             <li><span class="check">✓</span> 4-week fitness program</li>
             <li><span class="check">✓</span> Basic avatar selection</li>
+            <li class="muted"><span class="check">✕</span> 200 elite lessons</li>
             <li class="muted"><span class="check">✕</span> Unlimited AI sessions</li>
             <li class="muted"><span class="check">✕</span> Premium avatars</li>
-            <li class="muted"><span class="check">✕</span> Priority support</li>
           </ul>
           <a href="#waitlist" class="btn-pricing btn-pricing-free">Join Free Waitlist</a>
         </div>
@@ -1010,6 +914,7 @@
           <div class="pricing-period" id="pro-period">Billed monthly · Cancel anytime</div>
           <div class="pricing-divider"></div>
           <ul class="pricing-features">
+            <li><span class="check">✓</span> <strong>200 elite lessons</strong></li>
             <li><span class="check">✓</span> <strong>50 AI coaching sessions per day</strong></li>
             <li><span class="check">✓</span> AI swing video analysis</li>
             <li><span class="check">✓</span> Launch monitor coaching</li>
@@ -1024,7 +929,6 @@
           <a href="#waitlist" class="btn-pricing btn-pricing-pro">Join Premium Waitlist</a>
         </div>
       </div>
-
       <p style="text-align:center; margin-top: 20px; font-size: 0.82rem; color: var(--text2);">
         Pricing activates at launch. Waitlist members get first access.
       </p>
@@ -1059,8 +963,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="nav-logo">
-            <img src="logo.png" alt="AI Golf Coach" style="height:36px;" onerror="this.style.display='none'" />
-            <div class="nav-logo-text">AI Golf<span>Pro</span></div>
+            <img src="aigolfpro-logo.png" alt="AI Golf Coach" style="height:44px;" onerror="this.style.display='none'" />
           </div>
           <p>Your personal AI golf professional. PGA-level coaching powered by advanced AI — available to every golfer.</p>
         </div>
@@ -1083,8 +986,8 @@
         <div class="footer-links">
           <h4>Contact</h4>
           <ul>
-            <li><a href="/cdn-cgi/l/email-protection#ec9f999c9c839e98ac8d858b83808a9c9e83c28d9c9c"><span class="__cf_email__" data-cfemail="c6b5b3b6b6a9b4b286a7afa1a9aaa0b6b4a9e8a7b6b6">[email&#160;protected]</span></a></li>
-            <li><a href="/cdn-cgi/l/email-protection#d3a0a6a3a3bca1a793b2bab4bcbfb5a3a1bcfdb2a3a3">Get Support</a></li>
+            <li><a href="mailto:aigolfcoach@proton.me">aigolfcoach@proton.me</a></li>
+            <li><a href="mailto:aigolfcoach@proton.me">Get Support</a></li>
           </ul>
         </div>
       </div>
@@ -1093,7 +996,7 @@
         <p>
           <a href="#" onclick="showPage('privacy'); return false;">Privacy</a> ·
           <a href="#" onclick="showPage('terms'); return false;">Terms</a> ·
-          <a href="/cdn-cgi/l/email-protection#8af9fffafae5f8fecaebe3ede5e6ecfaf8e5a4ebfafa">Contact</a>
+          <a href="mailto:aigolfcoach@proton.me">Contact</a>
         </p>
       </div>
     </div>
@@ -1105,78 +1008,163 @@
 <div class="legal-page" id="privacy-page">
   <div class="back-btn" onclick="showPage('main')">← Back to AI Golf Coach</div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: March 2026</p>
-  <h2>1. Introduction</h2>
-  <p>AI Golf Coach ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and website (collectively, the "Service").</p>
-  <h2>2. Information We Collect</h2>
-  <p>We collect information you provide directly, including:</p>
-  <ul>
-    <li>Account information (name, email address, password)</li>
-    <li>Golf profile data (handicap, experience level, goals)</li>
-    <li>Golf performance data (launch monitor sessions, round scores, swing videos)</li>
-    <li>Fitness and health data (movement screening results, fitness plans)</li>
-    <li>Communications with our AI coach, Ace</li>
-    <li>Waitlist email addresses collected prior to launch</li>
-  </ul>
-  <h2>3. How We Use Your Information</h2>
-  <ul>
-    <li>Provide, maintain, and improve the Service</li>
-    <li>Personalise your AI coaching experience</li>
-    <li>Process your golf data to generate coaching recommendations</li>
-    <li>Send you service-related and launch communications</li>
-    <li>Monitor and analyse usage patterns to improve the app</li>
-    <li>Comply with legal obligations</li>
-  </ul>
-  <h2>4. AI Processing</h2>
-  <p>Our AI coaching features are powered by Anthropic's Claude AI. When you interact with Ace or submit data for analysis, that data is processed by Anthropic's systems. We do not use your personal golf data to train AI models.</p>
-  <h2>5. Data Storage and Security</h2>
-  <p>Your data is stored securely using Supabase (PostgreSQL database) and Cloudflare R2 (video storage). We implement industry-standard security measures including encryption in transit and at rest.</p>
-  <h2>6. Video Storage</h2>
-  <p>Swing videos you upload are stored securely in Cloudflare R2. Videos are private by default and only accessible to you. You can delete your videos at any time from within the app.</p>
-  <h2>7. Data Sharing</h2>
-  <p>We do not sell your personal information. We may share your information with service providers (Supabase, Cloudflare, Anthropic) necessary to operate the Service, or when required by law.</p>
-  <h2>8. Your Rights</h2>
-  <p>You have the right to access, correct, or delete your personal information at any time. Contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780b0d0808170a0c3819111f17141e080a1756190808">[email&#160;protected]</a> for any privacy requests.</p>
-  <h2>9. Children's Privacy</h2>
-  <p>The Service is not directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
-  <h2>10. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of changes by posting the new policy and updating the date above.</p>
-  <h2>11. Contact Us</h2>
-  <p>Questions? Email us at <a href="/cdn-cgi/l/email-protection#5c2f292c2c332e281c3d353b33303a2c2e33723d2c2c" style="color:var(--green)"><span class="__cf_email__" data-cfemail="fe8d8b8e8e918c8abe9f97999192988e8c91d09f8e8e">[email&#160;protected]</span></a></p>
+  <p class="updated">Last updated: April 2026</p>
+  <p class="intro">AI Golf Coach ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application. By using AI Golf Coach, you agree to the collection and use of information in accordance with this policy.</p>
+
+  <div class="legal-section">
+    <h2>1. Who We Are</h2>
+    <p>AI Golf Coach is a Canadian golf coaching application powered by Ace, your personal AI Golf Coach. We are based in Canada and operate under Canadian privacy law (PIPEDA). For privacy inquiries, contact us at: aigolfcoach@proton.me</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>2. Information We Collect</h2>
+    <p class="legal-sub-heading">Account Information</p>
+    <p>When you create an account we collect your name, email address, and password (encrypted). You may optionally provide your age range, dominant hand, handicap, experience level, typical score, play frequency, and golf goals.</p>
+    <p class="legal-sub-heading">Golf Performance Data</p>
+    <p>We collect golf data you enter including round scores, course names, fairways hit, greens in regulation, putts, birdies, pars, bogeys, and other scoring statistics. We also collect launch monitor data including club speed, ball speed, launch angle, spin rate, carry distance, and related metrics.</p>
+    <p class="legal-sub-heading">Swing Videos and Photos</p>
+    <p>With your permission, we collect swing videos and photos you record or upload for analysis by Ace. These files are stored securely in Cloudflare R2 cloud storage and accessible only to you.</p>
+    <p class="legal-sub-heading">GPS Round Tracking Data</p>
+    <p>When you use the GPS Round Tracker, we collect your precise GPS location approximately every 5 seconds throughout your round. GPS data is stored locally during the round, uploaded when you save, used only to generate your round replay map, never shared with third parties, and deleted when you delete the round or your account.</p>
+    <p class="legal-sub-heading">Social and Community Data</p>
+    <p>When you use The Clubhouse social features, we collect posts, comments, likes, follow relationships, and profile information you choose to make public.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>Provide personalised AI golf coaching through Ace</li>
+      <li>Analyse your golf performance and generate insights</li>
+      <li>Generate your round replay map from GPS tracking data</li>
+      <li>Save and retrieve your golf stats, sessions, and history</li>
+      <li>Power social features including The Clubhouse community feed</li>
+      <li>Improve our AI coaching algorithms and app features</li>
+      <li>Send app notifications (if you enable them)</li>
+      <li>Respond to customer support requests</li>
+      <li>Ensure app security and prevent fraud</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h2>4. Background Location Collection</h2>
+    <p>AI Golf Coach collects your location in the background ONLY when you have actively started a GPS round tracking session. Background location collection only occurs during an active tracked round, automatically stops when you end the round, and can be stopped at any time by ending the round or revoking location permissions. We never collect background location outside of active round tracking sessions.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>5. AI Coaching and Third Party Services</h2>
+    <p>Our AI coaching feature (Ace) is powered by Anthropic's Claude API. When you request an AI analysis, relevant golf data and your profile information is sent to Anthropic's servers to generate coaching responses. No GPS or location data is ever sent to Anthropic. Your data is stored on Supabase with industry-standard encryption. Swing videos are stored in Cloudflare R2.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>6. Data Sharing and Disclosure</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We do not display advertising and do not share data with advertisers. We may share your information only with service providers (Supabase, Anthropic, Cloudflare) who assist in app operations, if required by law, or with your explicit consent.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>7. Your Rights</h2>
+    <p>Under Canadian privacy law (PIPEDA) you have the right to access, correct, delete, and export your personal data, and to withdraw consent for data processing. California residents (CCPA) and EU/UK residents (GDPR) have additional rights. To exercise any of these rights, contact us at aigolfcoach@proton.me</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>8. Data Security</h2>
+    <p>We implement industry-standard security measures including encrypted data transmission (TLS/SSL), encrypted password storage, secure cloud storage, and row-level security policies on all database tables ensuring users can only access their own data.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>9. Children's Privacy</h2>
+    <p>AI Golf Coach is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>10. Contact Us</h2>
+    <p>For privacy-related questions: <a href="mailto:aigolfcoach@proton.me" style="color:var(--green)">aigolfcoach@proton.me</a> · aigolfcoach.app</p>
+  </div>
+
+  <p class="legal-footer">© 2026 AI Golf Coach. All rights reserved.</p>
 </div>
 
 <!-- ════ TERMS OF USE ════ -->
 <div class="legal-page" id="terms-page">
   <div class="back-btn" onclick="showPage('main')">← Back to AI Golf Coach</div>
   <h1>Terms of Use</h1>
-  <p class="updated">Last updated: March 2026</p>
-  <h2>1. Acceptance of Terms</h2>
-  <p>By downloading, installing, or using AI Golf Coach ("the App"), you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
-  <h2>2. Description of Service</h2>
-  <p>AI Golf Coach provides AI-powered golf coaching, swing analysis, performance tracking, and fitness planning. Coaching is provided for informational purposes and does not constitute professional sports instruction.</p>
-  <h2>3. User Accounts</h2>
-  <p>You must create an account to use most features. You are responsible for maintaining the confidentiality of your credentials and all activities under your account.</p>
-  <h2>4. Acceptable Use</h2>
-  <p>You agree not to use the Service for any unlawful purpose, upload harmful content, attempt unauthorised access to our systems, or reverse engineer the App.</p>
-  <h2>5. AI Coaching Disclaimer</h2>
-  <p>AI coaching provided by Ace is generated by artificial intelligence for informational purposes only. It does not replace instruction from a qualified PGA professional. AI Golf Coach is not responsible for any injury or damage resulting from following AI-generated advice.</p>
-  <h2>6. Health & Fitness Disclaimer</h2>
-  <p>Fitness plans and exercises are for general informational purposes. Consult a qualified healthcare provider before beginning any new exercise program.</p>
-  <h2>7. Subscription and Payments</h2>
-  <p>Premium subscription fees are billed monthly or annually as selected. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Manage subscriptions through your device's app store account settings.</p>
-  <h2>8. Intellectual Property</h2>
-  <p>The App and all content are owned by AI Golf Coach and protected by copyright and trademark law. You may not reproduce or distribute content without express written permission.</p>
-  <h2>9. User Content</h2>
-  <p>You retain ownership of content you upload. By uploading, you grant us a limited licence to store and process that content solely to provide the Service to you.</p>
-  <h2>10. Limitation of Liability</h2>
-  <p>To the maximum extent permitted by law, AI Golf Coach shall not be liable for indirect, incidental, or consequential damages. Our total liability shall not exceed the amount you paid us in the preceding 12 months.</p>
-  <h2>11. Governing Law</h2>
-  <p>These Terms are governed by the laws of Australia.</p>
-  <h2>12. Contact</h2>
-  <p>Questions? Email us at <a href="/cdn-cgi/l/email-protection#eb989e9b9b84999fab8a828c84878d9b9984c58a9b9b" style="color:var(--green)"><span class="__cf_email__" data-cfemail="671412171708151327060e00080b0117150849061717">[email&#160;protected]</span></a></p>
+  <p class="updated">Last updated: April 2026</p>
+  <p class="intro">Welcome to AI Golf Coach. By downloading, installing, or using our application, you agree to be bound by these Terms of Use. Please read them carefully before using the app. If you do not agree to these terms, do not use AI Golf Coach.</p>
+
+  <div class="legal-section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By creating an account or using AI Golf Coach, you confirm that you are at least 13 years of age, have read and understood these Terms of Use, and agree to be bound by them.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>2. Description of Service</h2>
+    <p>AI Golf Coach is a mobile golf coaching application that provides AI-powered golf coaching and swing analysis through "Ace", golf round tracking and statistics, launch monitor data analysis and shot dispersion tracking, practice session management and AI-generated drill plans, swing video recording and AI analysis, GPS-based round tracking, social features including The Clubhouse community feed, and fitness and mobility screening programs.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>3. AI Coaching Disclaimer</h2>
+    <p>IMPORTANT: Ace is an artificial intelligence coaching assistant, not a licensed or certified golf professional. AI coaching content is generated by AI and may contain errors, should not replace instruction from a qualified PGA professional, does not guarantee improvement in your golf game, and should be used at your own risk. Always consult a qualified golf instructor for personalised instruction. AI Golf Coach is not responsible for any injuries resulting from following AI coaching or fitness advice.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>4. GPS Round Tracking</h2>
+    <p>By enabling GPS round tracking you agree that the app will collect your GPS location approximately every 5 seconds while a round is active, location tracking continues in the background when the app is minimised during an active round, and GPS data is used solely to generate your round replay map and calculate distances walked. You can stop tracking at any time by ending the round or revoking location permissions in device settings.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>5. User Accounts</h2>
+    <p>You agree to provide accurate registration information, maintain the security of your password, notify us immediately of any unauthorised account access, be responsible for all activity under your account, and not share your account with others.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>6. Acceptable Use</h2>
+    <p>You agree NOT to upload illegal, harmful, or offensive content; post content that harasses or abuses other users; attempt to hack or reverse engineer the app; use the service for any unlawful purpose; impersonate other users; or create fake accounts or manipulate social features. Violation of acceptable use may result in immediate account termination.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>7. Social Features and Community</h2>
+    <p>Content you post in The Clubhouse is visible to other registered users. You agree not to post content that is offensive, defamatory, or harmful. We may remove content that violates these terms without notice and reserve the right to ban users who repeatedly violate community standards.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>8. User Content</h2>
+    <p>You retain ownership of content you upload to AI Golf Coach. By uploading content, you grant us a limited, non-exclusive licence to store, process, and display that content solely for the purpose of providing the service to you.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>9. Intellectual Property</h2>
+    <p>AI Golf Coach, including the Ace AI coaching system, app design, logo, and all content created by us, is protected by copyright and other intellectual property laws. You may not copy, modify, or distribute our app or its content without express written permission.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>10. Subscription and Payments</h2>
+    <p>Subscriptions purchased through the App Store or Google Play are subject to Apple's and Google's respective terms and refund policies. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Manage subscriptions through your device's app store account settings.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>11. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AI GOLF COACH AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR any indirect, incidental, or consequential damages, loss of data or profits, physical injury resulting from following AI coaching or fitness advice, service interruptions or technical failures, or inaccuracies in AI-generated coaching content. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICE IN THE PAST 12 MONTHS.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>12. Governing Law</h2>
+    <p>These Terms of Use are governed by the laws of Canada and the province of Manitoba, without regard to conflict of law provisions. Any disputes shall be resolved in the courts of Manitoba, Canada. For users outside Canada, local consumer protection laws may provide you with additional rights.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>13. Changes to Terms</h2>
+    <p>We may update these Terms of Use from time to time. We will notify you of material changes through the app or by email. Your continued use of AI Golf Coach after changes constitutes acceptance of the updated terms.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>14. Contact Us</h2>
+    <p>For questions about these Terms: <a href="mailto:aigolfcoach@proton.me" style="color:var(--green)">aigolfcoach@proton.me</a> · aigolfcoach.app</p>
+  </div>
+
+  <p class="legal-footer">© 2026 AI Golf Coach. All rights reserved.</p>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // ── Page routing ──
   function showPage(page) {
     document.getElementById('main-site').style.display = 'none';
@@ -1214,7 +1202,6 @@
       period.textContent = 'Billed monthly · Cancel anytime';
     }
   }
-
 
   // ── Supabase waitlist ──
   const SUPABASE_URL = 'https://kqeuzwdgbjylmknzunqg.supabase.co';
