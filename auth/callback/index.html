@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Golf Coach — Email Verified</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #080E1A;
+      font-family: -apple-system, 'Inter', Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #0D1421;
+      border: 1px solid rgba(74,222,128,0.3);
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon { font-size: 64px; margin-bottom: 20px; }
+    h1 { font-size: 24px; font-weight: 800; color: #4ADE80; margin-bottom: 12px; }
+    p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px; }
+    .btn {
+      display: inline-block;
+      background: #4ADE80;
+      color: #000;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+    .sub { font-size: 13px; color: rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">⛳</div>
+    <h1 id="title">Verifying...</h1>
+    <p id="message">Please wait while we confirm your email.</p>
+    <a id="btn" class="btn" href="aigolfcoach://" style="display:none">Open AI Golf Coach</a>
+    <p class="sub" id="sub"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tokenHash = params.get('token_hash');
+    const type = params.get('type');
+
+    async function verify() {
+      if (!tokenHash || type !== 'email') {
+        document.getElementById('title').textContent = 'Open the App';
+        document.getElementById('message').textContent = 'Return to AI Golf Coach to sign in.';
+        document.getElementById('btn').style.display = 'inline-block';
+        return;
+      }
+
+      try {
+        const res = await fetch('https://kqeuzwdgbjylmknzunqg.supabase.co/auth/v1/verify', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxZXV6d2RnYmp5bG1rbnp1bnFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk5MzI5MzMsImV4cCI6MjA1NTUwODkzM30.U1cBTMHVN5hk_Pnk8PHEDhVSFFmJZiHgbiyZIgaK2Dc'
+          },
+          body: JSON.stringify({ token_hash: tokenHash, type: 'email' })
+        });
+
+        if (res.ok) {
+          document.getElementById('title').textContent = '✓ Email Verified!';
+          document.getElementById('message').textContent = 'Your account is confirmed. Open the app to start your AI golf coaching journey.';
+          document.getElementById('btn').style.display = 'inline-block';
+          document.getElementById('sub').textContent = "Can't open automatically? Tap the button above.";
+          // Try to open the app automatically
+          window.location.href = 'aigolfcoach://auth/callback';
+        } else {
+          document.getElementById('title').textContent = 'Link Expired';
+          document.getElementById('message').textContent = 'This verification link has expired or already been used. Open the app and request a new one.';
+          document.getElementById('btn').style.display = 'inline-block';
+        }
+      } catch {
+        document.getElementById('title').textContent = '✓ Almost There!';
+        document.getElementById('message').textContent = 'Open AI Golf Coach to complete sign in.';
+        document.getElementById('btn').style.display = 'inline-block';
+      }
+    }
+
+    verify();
+  </script>
+</body>
+</html>
