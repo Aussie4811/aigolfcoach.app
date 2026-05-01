@@ -50,453 +50,96 @@
       backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--green-border);
     }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav-logo img {
-      height: 44px;
-      width: auto;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text2);
-      transition: color 0.2s;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text2); transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); }
-    .nav-cta {
-      background: var(--green);
-      color: #000;
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 10px 22px;
-      border-radius: 100px;
-      transition: all 0.2s;
-    }
+    .nav-cta { background: var(--green); color: #000; font-weight: 700; font-size: 0.875rem; padding: 10px 22px; border-radius: 100px; transition: all 0.2s; }
     .nav-cta:hover { background: var(--green-electric); transform: translateY(-1px); }
 
     /* ── Hero ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('ai-golf-coach-home.png');
-      background-size: cover;
-      background-position: center top;
-      z-index: 0;
-      opacity: 0.35;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(6,12,8,0.55) 0%, rgba(6,12,8,0.85) 60%, var(--bg) 100%);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-muted);
-      border: 1px solid var(--green-border);
-      border-radius: 100px;
-      padding: 6px 18px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--green);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      animation: fadeUp 0.8s ease both;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--green-electric);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.6); }
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
-    h1 em {
-      font-style: italic;
-      color: var(--green);
-      display: block;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--text2);
-      max-width: 580px;
-      margin: 0 auto 48px;
-      font-weight: 300;
-      line-height: 1.75;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('ai-golf-coach-home.png'); background-size: cover; background-position: center top; z-index: 0; opacity: 0.35; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,12,8,0.55) 0%, rgba(6,12,8,0.85) 60%, var(--bg) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--green-muted); border: 1px solid var(--green-border); border-radius: 100px; padding: 6px 18px; font-size: 0.78rem; font-weight: 600; color: var(--green); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.8s ease both; }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--green-electric); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.6); } }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 900; line-height: 1.0; letter-spacing: -2px; margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
+    h1 em { font-style: italic; color: var(--green); display: block; }
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text2); max-width: 580px; margin: 0 auto 48px; font-weight: 300; line-height: 1.75; animation: fadeUp 0.8s 0.2s ease both; }
     .hero-sub strong { color: var(--text); font-weight: 600; }
 
     /* Waitlist form */
-    .waitlist-form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 480px;
-      width: 100%;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-    .waitlist-input {
-      flex: 1;
-      min-width: 220px;
-      padding: 14px 20px;
-      border-radius: 100px;
-      border: 1px solid var(--green-border);
-      background: rgba(15,26,18,0.8);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+    .waitlist-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 480px; width: 100%; animation: fadeUp 0.8s 0.3s ease both; }
+    .waitlist-input { flex: 1; min-width: 220px; padding: 14px 20px; border-radius: 100px; border: 1px solid var(--green-border); background: rgba(15,26,18,0.8); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
     .waitlist-input:focus { border-color: var(--green); }
     .waitlist-input::placeholder { color: var(--text2); }
-    .btn-waitlist {
-      background: var(--green);
-      color: #000;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'DM Sans', sans-serif;
-      white-space: nowrap;
-    }
+    .btn-waitlist { background: var(--green); color: #000; font-weight: 700; font-size: 0.95rem; padding: 14px 28px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
     .btn-waitlist:hover { background: var(--green-electric); transform: translateY(-1px); }
-    .waitlist-note {
-      font-size: 0.78rem;
-      color: var(--text2);
-      margin-top: 12px;
-      animation: fadeUp 0.8s 0.35s ease both;
-    }
-    .waitlist-success {
-      display: none;
-      background: var(--green-muted);
-      border: 1px solid var(--green-border);
-      border-radius: 14px;
-      padding: 16px 24px;
-      color: var(--green);
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-align: center;
-    }
+    .waitlist-note { font-size: 0.78rem; color: var(--text2); margin-top: 12px; animation: fadeUp 0.8s 0.35s ease both; }
+    .waitlist-success { display: none; background: var(--green-muted); border: 1px solid var(--green-border); border-radius: 14px; padding: 16px 24px; color: var(--green); font-weight: 600; font-size: 0.95rem; text-align: center; }
 
     /* ── Stats ── */
-    .stats {
-      padding: 56px 0;
-      border-top: 1px solid var(--green-border);
-      border-bottom: 1px solid var(--green-border);
-      position: relative; z-index: 1;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-    }
-    .stat {
-      text-align: center;
-      padding: 20px;
-      border-right: 1px solid var(--green-border);
-    }
+    .stats { padding: 56px 0; border-top: 1px solid var(--green-border); border-bottom: 1px solid var(--green-border); position: relative; z-index: 1; }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+    .stat { text-align: center; padding: 20px; border-right: 1px solid var(--green-border); }
     .stat:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--green); line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 0.8rem; color: var(--text2); font-weight: 400; }
 
     /* ── Section base ── */
     section { position: relative; z-index: 1; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .section-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
-    .section-sub {
-      color: var(--text2);
-      font-size: 1rem;
-      max-width: 520px;
-      line-height: 1.75;
-      font-weight: 300;
-    }
+    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+    .section-sub { color: var(--text2); font-size: 1rem; max-width: 520px; line-height: 1.75; font-weight: 300; }
 
     /* ── Features ── */
     .features { padding: 110px 0; }
     .features-header { margin-bottom: 64px; }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .feature-card {
-      background: var(--card);
-      border: 1px solid var(--green-border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .feature-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--green), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature-card { background: var(--card); border: 1px solid var(--green-border); border-radius: var(--radius); padding: 28px; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+    .feature-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0; transition: opacity 0.3s; }
     .feature-card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 20px 40px rgba(16,185,129,0.08); }
     .feature-card:hover::after { opacity: 1; }
-    .feature-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: var(--green-muted);
-      border: 1px solid var(--green-border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-    }
-    .feature-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.2px;
-    }
+    .feature-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--green-muted); border: 1px solid var(--green-border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+    .feature-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
     .feature-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.65; font-weight: 300; }
 
     /* ── Ace Section ── */
-    .ace-section {
-      padding: 110px 0;
-      background: var(--bg2);
-      border-top: 1px solid var(--green-border);
-      border-bottom: 1px solid var(--green-border);
-    }
-    .ace-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
+    .ace-section { padding: 110px 0; background: var(--bg2); border-top: 1px solid var(--green-border); border-bottom: 1px solid var(--green-border); }
+    .ace-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
     .ace-capabilities { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
-    .ace-cap {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px 18px;
-      background: var(--card);
-      border: 1px solid var(--green-border);
-      border-radius: 12px;
-      transition: border-color 0.2s;
-    }
+    .ace-cap { display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px; background: var(--card); border: 1px solid var(--green-border); border-radius: 12px; transition: border-color 0.2s; }
     .ace-cap:hover { border-color: var(--green); }
     .ace-cap-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
     .ace-cap-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
     .ace-cap-desc { font-size: 0.8rem; color: var(--text2); font-weight: 300; }
-
-    /* Ace card */
-    .ace-card {
-      background: var(--card);
-      border: 1px solid var(--green-border);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(16,185,129,0.06);
-    }
-    .ace-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 20px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--green-border);
-    }
-    .ace-avatar-img {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      border: 2px solid var(--green);
-      object-fit: cover;
-    }
-    .ace-name { font-weight: 700; font-size: 1rem; }
-    .ace-title-tag { font-size: 0.78rem; color: var(--green); font-weight: 500; }
-    .ace-online {
-      margin-left: auto;
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; color: var(--green);
-    }
-    .ace-online::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: var(--green-electric);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    .ace-messages { display: flex; flex-direction: column; gap: 10px; }
-    .ace-msg {
-      padding: 11px 15px;
-      border-radius: 16px;
-      font-size: 0.85rem;
-      line-height: 1.55;
-    }
-    .ace-msg-ace {
-      background: var(--bg2);
-      border: 1px solid var(--green-border);
-      color: var(--text);
-      max-width: 88%;
-      border-bottom-left-radius: 4px;
-    }
-    .ace-msg-user {
-      background: var(--green-dark);
-      color: #fff;
-      max-width: 78%;
-      align-self: flex-end;
-      margin-left: auto;
-      border-bottom-right-radius: 4px;
-    }
+    .phone-mockup { position: relative; display: flex; justify-content: center; align-items: center; }
+    .phone-frame { width: 280px; border-radius: 44px; border: 3px solid var(--green-border); background: #000; box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(16,185,129,0.15); position: relative; overflow: hidden; }
+    .phone-notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; background: #000; border-radius: 3px; z-index: 2; }
+    .phone-screen-img { width: 100%; display: block; border-radius: 42px; }
+    .phone-glow { position: absolute; width: 280px; height: 280px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); bottom: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: -1; }
 
     /* ── Pricing ── */
     .pricing { padding: 110px 0; }
     .pricing-header { text-align: center; margin-bottom: 56px; }
-    .pricing-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
+    .pricing-toggle { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 40px; }
     .toggle-label { font-size: 0.9rem; color: var(--text2); font-weight: 500; }
     .toggle-label.active { color: var(--text); }
-    .toggle-switch {
-      width: 52px; height: 28px;
-      background: var(--green);
-      border-radius: 100px;
-      position: relative;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .toggle-switch::after {
-      content: '';
-      position: absolute;
-      width: 22px; height: 22px;
-      background: #fff;
-      border-radius: 50%;
-      top: 3px; left: 3px;
-      transition: transform 0.2s;
-    }
+    .toggle-switch { width: 52px; height: 28px; background: var(--green); border-radius: 100px; position: relative; cursor: pointer; transition: background 0.2s; }
+    .toggle-switch::after { content: ''; position: absolute; width: 22px; height: 22px; background: #fff; border-radius: 50%; top: 3px; left: 3px; transition: transform 0.2s; }
     .toggle-switch.annual::after { transform: translateX(24px); }
-    .save-badge {
-      background: var(--gold);
-      color: #000;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .pricing-card {
-      background: var(--card);
-      border: 1px solid var(--green-border);
-      border-radius: 24px;
-      padding: 36px;
-      position: relative;
-      overflow: hidden;
-    }
-    .pricing-card.featured {
-      border-color: var(--green);
-      box-shadow: 0 0 60px rgba(16,185,129,0.12);
-    }
-    .pricing-card.featured::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--green-dark), var(--green-electric), var(--green-dark));
-    }
-    .pricing-badge {
-      position: absolute;
-      top: 18px; right: 18px;
-      background: var(--gold);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-    }
+    .save-badge { background: var(--gold); color: #000; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 100px; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 820px; margin: 0 auto; }
+    .pricing-card { background: var(--card); border: 1px solid var(--green-border); border-radius: 24px; padding: 36px; position: relative; overflow: hidden; }
+    .pricing-card.featured { border-color: var(--green); box-shadow: 0 0 60px rgba(16,185,129,0.12); }
+    .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-dark), var(--green-electric), var(--green-dark)); }
+    .pricing-badge { position: absolute; top: 18px; right: 18px; background: var(--gold); color: #000; font-size: 0.65rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
     .pricing-plan { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text2); margin-bottom: 10px; }
-    .pricing-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 2px;
-    }
+    .pricing-price { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 900; line-height: 1; margin-bottom: 2px; }
     .pricing-price sup { font-size: 1.4rem; vertical-align: top; margin-top: 8px; display: inline-block; font-family: 'DM Sans', sans-serif; }
     .pricing-price sub { font-size: 1rem; font-family: 'DM Sans', sans-serif; color: var(--text2); font-weight: 400; }
     .pricing-period { font-size: 0.82rem; color: var(--text2); margin-bottom: 24px; min-height: 20px; }
@@ -506,124 +149,48 @@
     .pricing-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .pricing-features li.muted { opacity: 0.35; }
     .pricing-features li.muted .check { color: var(--text2); }
-    .btn-pricing {
-      width: 100%;
-      padding: 14px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-align: center;
-      transition: all 0.2s;
-      display: block;
-      cursor: pointer;
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-    }
+    .btn-pricing { width: 100%; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 0.95rem; text-align: center; transition: all 0.2s; display: block; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
     .btn-pricing-free { background: transparent; border: 1px solid var(--green-border); color: var(--text); }
     .btn-pricing-free:hover { border-color: var(--green); color: var(--green); }
     .btn-pricing-pro { background: var(--green); color: #000; }
     .btn-pricing-pro:hover { background: var(--green-electric); transform: translateY(-1px); }
 
     /* ── Waitlist section ── */
-    .waitlist-section {
-      padding: 110px 0;
-      background: var(--bg2);
-      border-top: 1px solid var(--green-border);
-      text-align: center;
-    }
+    .waitlist-section { padding: 110px 0; background: var(--bg2); border-top: 1px solid var(--green-border); text-align: center; }
     .waitlist-inner { max-width: 580px; margin: 0 auto; }
-    .waitlist-big-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      margin-top: 44px;
-    }
-    .waitlist-big-form .waitlist-input {
-      width: 100%;
-      max-width: 440px;
-      padding: 16px 24px;
-      font-size: 1rem;
-    }
-    .waitlist-big-form .btn-waitlist {
-      padding: 16px 36px;
-      font-size: 1rem;
-    }
-    .waitlist-stores {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 36px;
-      opacity: 0.5;
-    }
-    .store-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--card);
-      border: 1px solid var(--green-border);
-      border-radius: 100px;
-      padding: 10px 20px;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
+    .waitlist-big-form { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 44px; }
+    .waitlist-big-form .waitlist-input { width: 100%; max-width: 440px; padding: 16px 24px; font-size: 1rem; }
+    .waitlist-big-form .btn-waitlist { padding: 16px 36px; font-size: 1rem; }
+    .waitlist-stores { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; opacity: 0.5; }
+    .store-pill { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--green-border); border-radius: 100px; padding: 10px 20px; font-size: 0.875rem; font-weight: 600; }
 
     /* ── Footer ── */
-    footer {
-      padding: 56px 0 36px;
-      border-top: 1px solid var(--green-border);
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 48px;
-      flex-wrap: wrap;
-      margin-bottom: 44px;
-    }
+    footer { padding: 56px 0 36px; border-top: 1px solid var(--green-border); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; margin-bottom: 44px; }
     .footer-brand p { font-size: 0.85rem; color: var(--text2); max-width: 240px; line-height: 1.65; font-weight: 300; margin-top: 10px; }
     .footer-links h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text2); margin-bottom: 14px; }
     .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-links li a { font-size: 0.85rem; color: var(--text2); transition: color 0.2s; font-weight: 300; }
     .footer-links li a:hover { color: var(--green); }
-    .footer-bottom {
-      padding-top: 20px;
-      border-top: 1px solid var(--green-border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .footer-bottom { padding-top: 20px; border-top: 1px solid var(--green-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .footer-bottom p { font-size: 0.78rem; color: var(--text2); font-weight: 300; }
     .footer-bottom a { color: var(--text2); transition: color 0.2s; }
     .footer-bottom a:hover { color: var(--green); }
 
-    /* ── Legal pages ── */
-    .legal-page { padding: 130px 24px 80px; max-width: 760px; margin: 0 auto; display: none; }
-    .legal-page.active { display: block; }
-    .legal-page h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; margin-bottom: 6px; letter-spacing: -1px; }
-    .legal-page .updated { font-size: 0.82rem; color: var(--text2); margin-bottom: 44px; }
-    .legal-page .intro { font-size: 0.92rem; color: var(--text2); line-height: 1.8; margin-bottom: 32px; }
-    .legal-section { margin-bottom: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; }
-    .legal-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--green); }
-    .legal-section p, .legal-section li { font-size: 0.88rem; color: var(--text2); line-height: 1.8; font-weight: 300; margin-bottom: 8px; }
-    .legal-section ul { padding-left: 18px; }
-    .legal-section li { margin-bottom: 4px; }
-    .legal-sub-heading { font-size: 0.88rem; font-weight: 700; color: #CBD5E1; margin: 14px 0 6px; }
-    .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: 0.875rem; font-weight: 600; margin-bottom: 28px; cursor: pointer; transition: gap 0.2s; }
-    .back-btn:hover { gap: 12px; }
-    .legal-footer { font-size: 0.78rem; color: var(--text2); text-align: center; margin-top: 32px; padding-bottom: 40px; }
-
-    /* ── Main site ── */
-    #main-site { display: block; }
+    /* ── Screenshots ── */
+    .screenshots { padding: 110px 0 0; overflow: hidden; }
+    .screenshots-header { margin-bottom: 56px; }
+    .screenshots-scroll { width: 100%; overflow-x: auto; padding-bottom: 40px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .screenshots-scroll::-webkit-scrollbar { display: none; }
+    .screenshots-track { display: flex; gap: 20px; padding: 20px 48px 20px; width: max-content; }
+    .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .screenshot-frame { width: 200px; border-radius: 32px; border: 2px solid var(--green-border); background: #000; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(16,185,129,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .screenshot-frame:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 40px 60px rgba(0,0,0,0.6), 0 0 40px rgba(16,185,129,0.2); border-color: var(--green); }
+    .screenshot-frame img { width: 100%; display: block; border-radius: 30px; }
+    .screenshot-label { font-size: 0.82rem; font-weight: 600; color: var(--text2); letter-spacing: 0.3px; }
 
     /* ── Animations ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -639,25 +206,6 @@
       .footer-inner { flex-direction: column; gap: 32px; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
-
-    /* ── Screenshots ── */
-    .screenshots { padding: 110px 0 0; overflow: hidden; }
-    .screenshots-header { margin-bottom: 56px; }
-    .screenshots-scroll { width: 100%; overflow-x: auto; padding-bottom: 40px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .screenshots-scroll::-webkit-scrollbar { display: none; }
-    .screenshots-track { display: flex; gap: 20px; padding: 20px 48px 20px; width: max-content; }
-    .screenshot-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-    .screenshot-frame { width: 200px; border-radius: 32px; border: 2px solid var(--green-border); background: #000; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 30px rgba(16,185,129,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-    .screenshot-frame:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 40px 60px rgba(0,0,0,0.6), 0 0 40px rgba(16,185,129,0.2); border-color: var(--green); }
-    .screenshot-frame img { width: 100%; display: block; border-radius: 30px; }
-    .screenshot-label { font-size: 0.82rem; font-weight: 600; color: var(--text2); letter-spacing: 0.3px; }
-
-    /* ── Phone mockup ── */
-    .phone-mockup { position: relative; display: flex; justify-content: center; align-items: center; }
-    .phone-frame { width: 280px; border-radius: 44px; border: 3px solid var(--green-border); background: #000; box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(16,185,129,0.15); position: relative; overflow: hidden; }
-    .phone-notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; background: #000; border-radius: 3px; z-index: 2; }
-    .phone-screen-img { width: 100%; display: block; border-radius: 42px; }
-    .phone-glow { position: absolute; width: 280px; height: 280px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); bottom: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: -1; }
   </style>
 </head>
 <body>
@@ -677,512 +225,267 @@
   <a href="#waitlist" class="nav-cta">Join Waitlist</a>
 </nav>
 
-<div id="main-site">
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Coming Soon · iOS &amp; Android</div>
+    <h1>Your Personal<em>AI Golf Coach</em></h1>
+    <p class="hero-sub">
+      Meet <strong>Ace</strong> — your AI golf professional. Swing analysis, launch monitor coaching, equipment fitting, fitness plans, and live round tracking. Like having a PGA coach in your pocket, 24/7.
+    </p>
+    <form class="waitlist-form" onsubmit="submitWaitlist(event)">
+      <input class="waitlist-input" type="email" placeholder="Enter your email address" required />
+      <button class="btn-waitlist" type="submit">Get Early Access</button>
+    </form>
+    <div class="waitlist-success" id="hero-success">
+      🎉 You're on the list! We'll notify you the moment we launch.
+    </div>
+    <p class="waitlist-note">Join 500+ golfers already on the waitlist · Free to join · No spam</p>
+  </div>
+</section>
 
-  <!-- ── Hero ── -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Coming Soon · iOS & Android</div>
-      <h1>Your Personal<em>AI Golf Coach</em></h1>
-      <p class="hero-sub">
-        Meet <strong>Ace</strong> — your AI golf professional. Swing analysis, launch monitor coaching, equipment fitting, fitness plans, and live round tracking. Like having a PGA coach in your pocket, 24/7.
-      </p>
-      <form class="waitlist-form" onsubmit="submitWaitlist(event)">
-        <input class="waitlist-input" type="email" placeholder="Enter your email address" required />
-        <button class="btn-waitlist" type="submit">Get Early Access</button>
+<!-- ── Stats ── -->
+<div class="stats reveal">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">200</div><div class="stat-label">Elite Lessons</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Fitness Exercises</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Drill Phases</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Swing Videos</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">AI Coaching</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Features ── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <div class="section-eyebrow">Everything in one app</div>
+      <h2 class="section-title">Your complete golf<br>improvement platform</h2>
+      <p class="section-sub">From swing video to launch monitor to mental game — AI Golf Coach covers every corner of your game with personalised AI coaching.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">200 Elite Lessons</div>
+        <p class="feature-desc">Ball striking, short game, course IQ, mental game — every facet of golf covered with 8-phase drill systems built by a PGA of Canada professional.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📡</div>
+        <div class="feature-title">Launch Monitor Analytics</div>
+        <p class="feature-desc">Log sessions from any launch monitor. Ace analyses ball speed, spin rate, attack angle, smash factor, and carry — giving you broadcast-style data visualisation instantly.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎥</div>
+        <div class="feature-title">AI Video Swing Analysis</div>
+        <p class="feature-desc">Upload swing videos and get frame-by-frame coaching from Ace. Identifies faults, connects them to your ball flight, and gives you specific drills to fix today.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Shot Dispersion Hub</div>
+        <p class="feature-desc">Top-down and face-on ball flight views, club gapping, progress tracking over time. Compare your data against tour pros. Your personal broadcast studio.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Live Scorecard &amp; Round Replay</div>
+        <p class="feature-desc">Track every round live with GPS and digital scorecard. When you finish, Ace analyses your round — what worked, what didn't, and what to focus on next.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">💪</div>
+        <div class="feature-title">Personalised Fitness Program</div>
+        <p class="feature-desc">TPI movement screening builds a custom 4-week fitness plan for your body. 40+ golf-specific exercises with progress tracking — get stronger, hit it further.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Screenshots ── -->
+<section class="screenshots">
+  <div class="container">
+    <div class="screenshots-header reveal">
+      <div class="section-eyebrow">See it in action</div>
+      <h2 class="section-title">Everything you need,<br>beautifully designed</h2>
+      <p class="section-sub">Built for golfers who are serious about improvement. Every screen designed to get out of your way and let Ace do the coaching.</p>
+    </div>
+  </div>
+  <div class="screenshots-scroll reveal">
+    <div class="screenshots-track">
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen1.jpeg" alt="Stats & Round Tracking" /></div><div class="screenshot-label">Stats &amp; Rounds</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen2.jpeg" alt="Launch Monitor" /></div><div class="screenshot-label">Launch Monitor</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen3.jpeg" alt="Practice Drills" /></div><div class="screenshot-label">Practice &amp; Drills</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen4.jpeg" alt="Live Scorecard" /></div><div class="screenshot-label">Live Scorecard</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen5.jpeg" alt="Ask Ace AI Coach" /></div><div class="screenshot-label">Ask Ace</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen6.jpeg" alt="Fitness & Mental Game" /></div><div class="screenshot-label">Fitness &amp; Mind</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen7.jpeg" alt="Avatar Picker" /></div><div class="screenshot-label">Personalise Ace</div></div>
+      <div class="screenshot-item"><div class="screenshot-frame"><img src="screen8.jpeg" alt="Practice Analytics" /></div><div class="screenshot-label">Practice Analytics</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ace Section ── -->
+<section class="ace-section" id="ace">
+  <div class="container">
+    <div class="ace-inner">
+      <div>
+        <div class="section-eyebrow reveal">Your AI Golf Professional</div>
+        <h2 class="section-title reveal">Meet Ace</h2>
+        <p class="section-sub reveal">Ace is your personal AI golf coach — PGA-level expertise available 24/7. Ask anything. Get specific answers based on your game data, handicap, and goals. Ace knows your game better than anyone.</p>
+        <div class="ace-capabilities reveal">
+          <div class="ace-cap"><div class="ace-cap-icon">🏌️</div><div><div class="ace-cap-title">Golf Coaching Q&amp;A</div><div class="ace-cap-desc">Technique, rules, course strategy, mental game</div></div></div>
+          <div class="ace-cap"><div class="ace-cap-icon">🔩</div><div><div class="ace-cap-title">Club Fitting &amp; Shaft Blueprint</div><div class="ace-cap-desc">Every major brand, shaft flex, weight, kick point</div></div></div>
+          <div class="ace-cap"><div class="ace-cap-icon">⛳</div><div><div class="ace-cap-title">Course Strategy</div><div class="ace-cap-desc">Hole-by-hole game plans, shot selection, wind play</div></div></div>
+          <div class="ace-cap"><div class="ace-cap-icon">🎯</div><div><div class="ace-cap-title">Ball &amp; Wedge Fitting</div><div class="ace-cap-desc">Compression, cover, bounce, grind — matched to your swing</div></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="phone-mockup">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <img src="ai-golf-coach-home.png" alt="AI Golf Coach App" class="phone-screen-img" />
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ── -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="section-eyebrow">Simple pricing</div>
+      <h2 class="section-title">Start free.<br>Upgrade when ready.</h2>
+      <p class="section-sub" style="margin: 0 auto 32px;">Less than one coffee a month. Less than 1/10th of a single golf lesson. Unlimited AI coaching, every day.</p>
+    </div>
+    <div class="pricing-toggle reveal">
+      <span class="toggle-label active" id="toggle-monthly">Monthly</span>
+      <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"></div>
+      <span class="toggle-label" id="toggle-annual">Annual</span>
+      <span class="save-badge">Save 40%</span>
+    </div>
+    <div class="pricing-grid reveal">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Free</div>
+        <div class="pricing-price"><sup>$</sup>0</div>
+        <div class="pricing-period">Forever free · No credit card needed</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 25 free lessons included</li>
+          <li><span class="check">✓</span> 14 AI analyses per month</li>
+          <li><span class="check">✓</span> AI swing video analysis</li>
+          <li><span class="check">✓</span> Launch monitor coaching</li>
+          <li><span class="check">✓</span> Round scoring &amp; stats tracking</li>
+          <li><span class="check">✓</span> Practice drills &amp; planning</li>
+          <li><span class="check">✓</span> 4-week fitness program</li>
+          <li><span class="check">✓</span> Basic avatar selection</li>
+          <li class="muted"><span class="check">✕</span> 200 elite lessons</li>
+          <li class="muted"><span class="check">✕</span> Unlimited AI sessions</li>
+          <li class="muted"><span class="check">✕</span> Premium avatars</li>
+        </ul>
+        <a href="#waitlist" class="btn-pricing btn-pricing-free">Join Free Waitlist</a>
+      </div>
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">BEST VALUE</div>
+        <div class="pricing-plan">Premium</div>
+        <div class="pricing-price" id="pro-price"><sup>$</sup>6.99<sub>/mo</sub></div>
+        <div class="pricing-period" id="pro-period">Billed monthly · Cancel anytime</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> <strong>200 elite lessons</strong></li>
+          <li><span class="check">✓</span> <strong>50 AI coaching sessions per day</strong></li>
+          <li><span class="check">✓</span> AI swing video analysis</li>
+          <li><span class="check">✓</span> Launch monitor coaching</li>
+          <li><span class="check">✓</span> Round scoring &amp; stats tracking</li>
+          <li><span class="check">✓</span> Practice drills &amp; planning</li>
+          <li><span class="check">✓</span> 4-week fitness program</li>
+          <li><span class="check">✓</span> <strong>All premium avatars</strong></li>
+          <li><span class="check">✓</span> <strong>Animated avatar (coming soon)</strong></li>
+          <li><span class="check">✓</span> <strong>Early access to new features</strong></li>
+          <li><span class="check">✓</span> <strong>Priority support from Ace</strong></li>
+        </ul>
+        <a class="btn-pricing btn-pricing-free" style="opacity:0.5; cursor:not-allowed; pointer-events:none;">🔒 Coming in v1.1</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top: 20px; font-size: 0.82rem; color: var(--text2);">
+      Free tier available now. Premium subscription coming in v1.1 — waitlist members get first access and a launch discount.
+    </p>
+  </div>
+</section>
+
+<!-- ── Waitlist ── -->
+<section class="waitlist-section" id="waitlist">
+  <div class="container">
+    <div class="waitlist-inner reveal">
+      <div class="section-eyebrow">Early access</div>
+      <h2 class="section-title">Be first on the<br>fairway</h2>
+      <p class="section-sub" style="margin: 0 auto;">Join the waitlist today. We'll notify you the moment AI Golf Coach launches on the App Store and Google Play. Waitlist members get priority access and a launch discount.</p>
+      <form class="waitlist-big-form" onsubmit="submitWaitlistBottom(event)">
+        <input class="waitlist-input" type="email" placeholder="Your email address" required />
+        <button class="btn-waitlist" type="submit">🏌️ Join the Waitlist</button>
       </form>
-      <div class="waitlist-success" id="hero-success">
-        🎉 You're on the list! We'll notify you the moment we launch.
+      <div class="waitlist-success" id="bottom-success">
+        🎉 You're on the list! We'll be in touch soon.
       </div>
-      <p class="waitlist-note">Join 500+ golfers already on the waitlist · Free to join · No spam</p>
-    </div>
-  </section>
-
-  <!-- ── Stats ── -->
-  <div class="stats reveal">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-num">200</div>
-          <div class="stat-label">Elite Lessons</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">40+</div>
-          <div class="stat-label">Fitness Exercises</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">8</div>
-          <div class="stat-label">Drill Phases</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">∞</div>
-          <div class="stat-label">Swing Videos</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">AI Coaching</div>
-        </div>
+      <div class="waitlist-stores">
+        <div class="store-pill">🍎 App Store — Coming Soon</div>
+        <div class="store-pill">▶ Google Play — Coming Soon</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ── Features ── -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="features-header reveal">
-        <div class="section-eyebrow">Everything in one app</div>
-        <h2 class="section-title">Your complete golf<br>improvement platform</h2>
-        <p class="section-sub">From swing video to launch monitor to mental game — AI Golf Coach covers every corner of your game with personalised AI coaching.</p>
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="aigolfpro-logo.png" alt="AI Golf Coach" style="height:44px;" onerror="this.style.display='none'" />
+        </div>
+        <p>Your personal AI golf professional. PGA-level coaching powered by advanced AI — available to every golfer.</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">🎯</div>
-          <div class="feature-title">200 Elite Lessons</div>
-          <p class="feature-desc">Ball striking, short game, course IQ, mental game — every facet of golf covered with 8-phase drill systems built by a PGA of Canada professional.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">📡</div>
-          <div class="feature-title">Launch Monitor Analytics</div>
-          <p class="feature-desc">Log sessions from any launch monitor. Ace analyses ball speed, spin rate, attack angle, smash factor, and carry — giving you broadcast-style data visualisation instantly.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">🎥</div>
-          <div class="feature-title">AI Video Swing Analysis</div>
-          <p class="feature-desc">Upload swing videos and get frame-by-frame coaching from Ace. Identifies faults, connects them to your ball flight, and gives you specific drills to fix today.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">📊</div>
-          <div class="feature-title">Shot Dispersion Hub</div>
-          <p class="feature-desc">Top-down and face-on ball flight views, club gapping, progress tracking over time. Compare your data against tour pros. Your personal broadcast studio.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">📋</div>
-          <div class="feature-title">Live Scorecard & Round Replay</div>
-          <p class="feature-desc">Track every round live with GPS and digital scorecard. When you finish, Ace analyses your round — what worked, what didn't, and what to focus on next.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">💪</div>
-          <div class="feature-title">Personalised Fitness Program</div>
-          <p class="feature-desc">TPI movement screening builds a custom 4-week fitness plan for your body. 40+ golf-specific exercises with progress tracking — get stronger, hit it further.</p>
-        </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#ace">Meet Ace</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#waitlist">Join Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:aigolfcoach@proton.me">aigolfcoach@proton.me</a></li>
+          <li><a href="mailto:aigolfcoach@proton.me">Get Support</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- ── Screenshots ── -->
-  <section class="screenshots">
-    <div class="container">
-      <div class="screenshots-header reveal">
-        <div class="section-eyebrow">See it in action</div>
-        <h2 class="section-title">Everything you need,<br>beautifully designed</h2>
-        <p class="section-sub">Built for golfers who are serious about improvement. Every screen designed to get out of your way and let Ace do the coaching.</p>
-      </div>
+    <div class="footer-bottom">
+      <p>© 2026 AI Golf Coach. All rights reserved.</p>
+      <p>
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a> ·
+        <a href="mailto:aigolfcoach@proton.me">Contact</a>
+      </p>
     </div>
-    <div class="screenshots-scroll reveal">
-      <div class="screenshots-track">
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen1.jpeg" alt="Stats & Round Tracking" /></div>
-          <div class="screenshot-label">Stats & Rounds</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen2.jpeg" alt="Launch Monitor" /></div>
-          <div class="screenshot-label">Launch Monitor</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen3.jpeg" alt="Practice Drills" /></div>
-          <div class="screenshot-label">Practice & Drills</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen4.jpeg" alt="Live Scorecard" /></div>
-          <div class="screenshot-label">Live Scorecard</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen5.jpeg" alt="Ask Ace AI Coach" /></div>
-          <div class="screenshot-label">Ask Ace</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen6.jpeg" alt="Fitness & Mental Game" /></div>
-          <div class="screenshot-label">Fitness & Mind</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen7.jpeg" alt="Avatar Picker" /></div>
-          <div class="screenshot-label">Personalise Ace</div>
-        </div>
-        <div class="screenshot-item">
-          <div class="screenshot-frame"><img src="screen8.jpeg" alt="Practice Analytics" /></div>
-          <div class="screenshot-label">Practice Analytics</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Ace Section ── -->
-  <section class="ace-section" id="ace">
-    <div class="container">
-      <div class="ace-inner">
-        <div>
-          <div class="section-eyebrow reveal">Your AI Golf Professional</div>
-          <h2 class="section-title reveal">Meet Ace</h2>
-          <p class="section-sub reveal">Ace is your personal AI golf coach — PGA-level expertise available 24/7. Ask anything. Get specific answers based on your game data, handicap, and goals. Ace knows your game better than anyone.</p>
-          <div class="ace-capabilities reveal">
-            <div class="ace-cap">
-              <div class="ace-cap-icon">🏌️</div>
-              <div>
-                <div class="ace-cap-title">Golf Coaching Q&A</div>
-                <div class="ace-cap-desc">Technique, rules, course strategy, mental game</div>
-              </div>
-            </div>
-            <div class="ace-cap">
-              <div class="ace-cap-icon">🔩</div>
-              <div>
-                <div class="ace-cap-title">Club Fitting & Shaft Blueprint</div>
-                <div class="ace-cap-desc">Every major brand, shaft flex, weight, kick point</div>
-              </div>
-            </div>
-            <div class="ace-cap">
-              <div class="ace-cap-icon">⛳</div>
-              <div>
-                <div class="ace-cap-title">Course Strategy</div>
-                <div class="ace-cap-desc">Hole-by-hole game plans, shot selection, wind play</div>
-              </div>
-            </div>
-            <div class="ace-cap">
-              <div class="ace-cap-icon">🎯</div>
-              <div>
-                <div class="ace-cap-title">Ball & Wedge Fitting</div>
-                <div class="ace-cap-desc">Compression, cover, bounce, grind — matched to your swing</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal">
-          <div class="phone-mockup">
-            <div class="phone-frame">
-              <div class="phone-notch"></div>
-              <img src="ai-golf-coach-home.png" alt="AI Golf Coach App" class="phone-screen-img" />
-            </div>
-            <div class="phone-glow"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Pricing ── -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="pricing-header reveal">
-        <div class="section-eyebrow">Simple pricing</div>
-        <h2 class="section-title">Start free.<br>Upgrade when ready.</h2>
-        <p class="section-sub" style="margin: 0 auto 32px;">Less than one coffee a month. Less than 1/10th of a single golf lesson. Unlimited AI coaching, every day.</p>
-      </div>
-      <div class="pricing-toggle reveal">
-        <span class="toggle-label active" id="toggle-monthly">Monthly</span>
-        <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"></div>
-        <span class="toggle-label" id="toggle-annual">Annual</span>
-        <span class="save-badge">Save 40%</span>
-      </div>
-      <div class="pricing-grid reveal">
-        <!-- Free -->
-        <div class="pricing-card">
-          <div class="pricing-plan">Free</div>
-          <div class="pricing-price"><sup>$</sup>0</div>
-          <div class="pricing-period">Forever free · No credit card needed</div>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li><span class="check">✓</span> 25 free lessons included</li>
-           <li><span class="check">✓</span> 14 AI analyses per month</li>
-            <li><span class="check">✓</span> AI swing video analysis</li>
-            <li><span class="check">✓</span> Launch monitor coaching</li>
-            <li><span class="check">✓</span> Round scoring & stats tracking</li>
-            <li><span class="check">✓</span> Practice drills & planning</li>
-            <li><span class="check">✓</span> 4-week fitness program</li>
-            <li><span class="check">✓</span> Basic avatar selection</li>
-            <li class="muted"><span class="check">✕</span> 200 elite lessons</li>
-            <li class="muted"><span class="check">✕</span> Unlimited AI sessions</li>
-            <li class="muted"><span class="check">✕</span> Premium avatars</li>
-          </ul>
-          <a href="#waitlist" class="btn-pricing btn-pricing-free">Join Free Waitlist</a>
-        </div>
-        <!-- Pro -->
-        <div class="pricing-card featured">
-          <div class="pricing-badge">BEST VALUE</div>
-          <div class="pricing-plan">Premium</div>
-          <div class="pricing-price" id="pro-price"><sup>$</sup>6.99<sub>/mo</sub></div>
-          <div class="pricing-period" id="pro-period">Billed monthly · Cancel anytime</div>
-          <div class="pricing-divider"></div>
-          <ul class="pricing-features">
-            <li><span class="check">✓</span> <strong>200 elite lessons</strong></li>
-            <li><span class="check">✓</span> <strong>50 AI coaching sessions per day</strong></li>
-            <li><span class="check">✓</span> AI swing video analysis</li>
-            <li><span class="check">✓</span> Launch monitor coaching</li>
-            <li><span class="check">✓</span> Round scoring & stats tracking</li>
-            <li><span class="check">✓</span> Practice drills & planning</li>
-            <li><span class="check">✓</span> 4-week fitness program</li>
-            <li><span class="check">✓</span> <strong>All premium avatars</strong></li>
-            <li><span class="check">✓</span> <strong>Animated avatar (coming soon)</strong></li>
-            <li><span class="check">✓</span> <strong>Early access to new features</strong></li>
-            <li><span class="check">✓</span> <strong>Priority support from Ace</strong></li>
-          </ul>
-          <a class="btn-pricing btn-pricing-free" style="opacity:0.5; cursor:not-allowed; pointer-events:none;">🔒 Coming in v1.1</a>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top: 20px; font-size: 0.82rem; color: var(--text2);">
-  Free tier available now. Premium subscription coming in v1.1 — waitlist members get first access and a launch discount.
-</p>
-    </div>
-  </section>
-
-  <!-- ── Waitlist ── -->
-  <section class="waitlist-section" id="waitlist">
-    <div class="container">
-      <div class="waitlist-inner reveal">
-        <div class="section-eyebrow">Early access</div>
-        <h2 class="section-title">Be first on the<br>fairway</h2>
-        <p class="section-sub" style="margin: 0 auto;">Join the waitlist today. We'll notify you the moment AI Golf Coach launches on the App Store and Google Play. Waitlist members get priority access and a launch discount.</p>
-        <form class="waitlist-big-form" onsubmit="submitWaitlistBottom(event)">
-          <input class="waitlist-input" type="email" placeholder="Your email address" required />
-          <button class="btn-waitlist" type="submit">🏌️ Join the Waitlist</button>
-        </form>
-        <div class="waitlist-success" id="bottom-success">
-          🎉 You're on the list! We'll be in touch soon.
-        </div>
-        <div class="waitlist-stores">
-          <div class="store-pill">🍎 App Store — Coming Soon</div>
-          <div class="store-pill">▶ Google Play — Coming Soon</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Footer ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="nav-logo">
-            <img src="aigolfpro-logo.png" alt="AI Golf Coach" style="height:44px;" onerror="this.style.display='none'" />
-          </div>
-          <p>Your personal AI golf professional. PGA-level coaching powered by advanced AI — available to every golfer.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#ace">Meet Ace</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#waitlist">Join Waitlist</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a></li>
-            <li><a href="#" onclick="showPage('terms'); return false;">Terms of Use</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:aigolfcoach@proton.me">aigolfcoach@proton.me</a></li>
-            <li><a href="mailto:aigolfcoach@proton.me">Get Support</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 AI Golf Coach. All rights reserved.</p>
-        <p>
-          <a href="#" onclick="showPage('privacy'); return false;">Privacy</a> ·
-          <a href="#" onclick="showPage('terms'); return false;">Terms</a> ·
-          <a href="mailto:aigolfcoach@proton.me">Contact</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-</div><!-- end #main-site -->
-
-<!-- ════ PRIVACY POLICY ════ -->
-<div class="legal-page" id="privacy-page">
-  <div class="back-btn" onclick="showPage('main')">← Back to AI Golf Coach</div>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: April 2026</p>
-  <p class="intro">AI Golf Coach ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application. By using AI Golf Coach, you agree to the collection and use of information in accordance with this policy.</p>
-
-  <div class="legal-section">
-    <h2>1. Who We Are</h2>
-    <p>AI Golf Coach is a Canadian golf coaching application powered by Ace, your personal AI Golf Coach. We are based in Canada and operate under Canadian privacy law (PIPEDA). For privacy inquiries, contact us at: aigolfcoach@proton.me</p>
   </div>
-
-  <div class="legal-section">
-    <h2>2. Information We Collect</h2>
-    <p class="legal-sub-heading">Account Information</p>
-    <p>When you create an account we collect your name, email address, and password (encrypted). You may optionally provide your age range, dominant hand, handicap, experience level, typical score, play frequency, and golf goals.</p>
-    <p class="legal-sub-heading">Golf Performance Data</p>
-    <p>We collect golf data you enter including round scores, course names, fairways hit, greens in regulation, putts, birdies, pars, bogeys, and other scoring statistics. We also collect launch monitor data including club speed, ball speed, launch angle, spin rate, carry distance, and related metrics.</p>
-    <p class="legal-sub-heading">Swing Videos and Photos</p>
-    <p>With your permission, we collect swing videos and photos you record or upload for analysis by Ace. These files are stored securely in Cloudflare R2 cloud storage and accessible only to you.</p>
-    <p class="legal-sub-heading">GPS Round Tracking Data</p>
-    <p>When you use the GPS Round Tracker, we collect your precise GPS location approximately every 5 seconds throughout your round. GPS data is stored locally during the round, uploaded when you save, used only to generate your round replay map, never shared with third parties, and deleted when you delete the round or your account.</p>
-    <p class="legal-sub-heading">Social and Community Data</p>
-    <p>When you use The Clubhouse social features, we collect posts, comments, likes, follow relationships, and profile information you choose to make public.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>3. How We Use Your Information</h2>
-    <ul>
-      <li>Provide personalised AI golf coaching through Ace</li>
-      <li>Analyse your golf performance and generate insights</li>
-      <li>Generate your round replay map from GPS tracking data</li>
-      <li>Save and retrieve your golf stats, sessions, and history</li>
-      <li>Power social features including The Clubhouse community feed</li>
-      <li>Improve our AI coaching algorithms and app features</li>
-      <li>Send app notifications (if you enable them)</li>
-      <li>Respond to customer support requests</li>
-      <li>Ensure app security and prevent fraud</li>
-      <li>Comply with legal obligations</li>
-    </ul>
-  </div>
-
-  <div class="legal-section">
-    <h2>4. Background Location Collection</h2>
-    <p>AI Golf Coach collects your location in the background ONLY when you have actively started a GPS round tracking session. Background location collection only occurs during an active tracked round, automatically stops when you end the round, and can be stopped at any time by ending the round or revoking location permissions. We never collect background location outside of active round tracking sessions.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>5. AI Coaching and Third Party Services</h2>
-    <p>Our AI coaching feature (Ace) is powered by Anthropic's Claude API. When you request an AI analysis, relevant golf data and your profile information is sent to Anthropic's servers to generate coaching responses. No GPS or location data is ever sent to Anthropic. Your data is stored on Supabase with industry-standard encryption. Swing videos are stored in Cloudflare R2.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>6. Data Sharing and Disclosure</h2>
-    <p>We do not sell, trade, or rent your personal information to third parties. We do not display advertising and do not share data with advertisers. We may share your information only with service providers (Supabase, Anthropic, Cloudflare) who assist in app operations, if required by law, or with your explicit consent.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>7. Your Rights</h2>
-    <p>Under Canadian privacy law (PIPEDA) you have the right to access, correct, delete, and export your personal data, and to withdraw consent for data processing. California residents (CCPA) and EU/UK residents (GDPR) have additional rights. To exercise any of these rights, contact us at aigolfcoach@proton.me</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>8. Data Security</h2>
-    <p>We implement industry-standard security measures including encrypted data transmission (TLS/SSL), encrypted password storage, secure cloud storage, and row-level security policies on all database tables ensuring users can only access their own data.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>9. Children's Privacy</h2>
-    <p>AI Golf Coach is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>10. Contact Us</h2>
-    <p>For privacy-related questions: <a href="mailto:aigolfcoach@proton.me" style="color:var(--green)">aigolfcoach@proton.me</a> · aigolfcoach.app</p>
-  </div>
-
-  <p class="legal-footer">© 2026 AI Golf Coach. All rights reserved.</p>
-</div>
-
-<!-- ════ TERMS OF USE ════ -->
-<div class="legal-page" id="terms-page">
-  <div class="back-btn" onclick="showPage('main')">← Back to AI Golf Coach</div>
-  <h1>Terms of Use</h1>
-  <p class="updated">Last updated: April 2026</p>
-  <p class="intro">Welcome to AI Golf Coach. By downloading, installing, or using our application, you agree to be bound by these Terms of Use. Please read them carefully before using the app. If you do not agree to these terms, do not use AI Golf Coach.</p>
-
-  <div class="legal-section">
-    <h2>1. Acceptance of Terms</h2>
-    <p>By creating an account or using AI Golf Coach, you confirm that you are at least 13 years of age, have read and understood these Terms of Use, and agree to be bound by them.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>2. Description of Service</h2>
-    <p>AI Golf Coach is a mobile golf coaching application that provides AI-powered golf coaching and swing analysis through "Ace", golf round tracking and statistics, launch monitor data analysis and shot dispersion tracking, practice session management and AI-generated drill plans, swing video recording and AI analysis, GPS-based round tracking, social features including The Clubhouse community feed, and fitness and mobility screening programs.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>3. AI Coaching Disclaimer</h2>
-    <p>IMPORTANT: Ace is an artificial intelligence coaching assistant, not a licensed or certified golf professional. AI coaching content is generated by AI and may contain errors, should not replace instruction from a qualified PGA professional, does not guarantee improvement in your golf game, and should be used at your own risk. Always consult a qualified golf instructor for personalised instruction. AI Golf Coach is not responsible for any injuries resulting from following AI coaching or fitness advice.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>4. GPS Round Tracking</h2>
-    <p>By enabling GPS round tracking you agree that the app will collect your GPS location approximately every 5 seconds while a round is active, location tracking continues in the background when the app is minimised during an active round, and GPS data is used solely to generate your round replay map and calculate distances walked. You can stop tracking at any time by ending the round or revoking location permissions in device settings.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>5. User Accounts</h2>
-    <p>You agree to provide accurate registration information, maintain the security of your password, notify us immediately of any unauthorised account access, be responsible for all activity under your account, and not share your account with others.</p>
-  </div>
-
-  <div class="legal-section">
-  <h2>6. Acceptable Use</h2>
-<p>You agree NOT to upload illegal, harmful, or offensive content; post content that harasses, threatens, bullies, or abuses other users; attempt to hack or reverse engineer the app; use the service for any unlawful purpose; impersonate other users; create fake accounts or manipulate social features; use automated bots or scripts to interact with the service; or use the service in any way that could damage or overburden our systems.</p>
-<p style="margin-top:10px;">Harassment, bullying, hate speech, or targeted abuse of other users will result in immediate and permanent account termination without warning. Violation of any acceptable use policy may result in immediate account termination without refund.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>7. Social Features and Community</h2>
-    <p>Content you post in The Clubhouse is visible to other registered users. You agree not to post content that is offensive, defamatory, or harmful. We may remove content that violates these terms without notice and reserve the right to ban users who repeatedly violate community standards.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>8. User Content</h2>
-    <p>You retain ownership of content you upload to AI Golf Coach. By uploading content, you grant us a limited, non-exclusive licence to store, process, and display that content solely for the purpose of providing the service to you.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>9. Intellectual Property</h2>
-    <p>AI Golf Coach, including the Ace AI coaching system, app design, logo, and all content created by us, is protected by copyright and other intellectual property laws. You may not copy, modify, or distribute our app or its content without express written permission.</p>
-  </div>
-
-  <div class="legal-section">
-  <h2>10. Subscription and Payments</h2>
-<p>AI Golf Coach currently offers free access to core features with a monthly limit on AI analyses. We may introduce premium subscription tiers in the future. Any future paid features will be clearly communicated with transparent pricing before purchase. Subscriptions purchased through the App Store or Google Play will be subject to Apple's and Google's respective terms and refund policies.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>11. Limitation of Liability</h2>
-    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AI GOLF COACH AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR any indirect, incidental, or consequential damages, loss of data or profits, physical injury resulting from following AI coaching or fitness advice, service interruptions or technical failures, or inaccuracies in AI-generated coaching content. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICE IN THE PAST 12 MONTHS.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>12. Governing Law</h2>
-    <p>These Terms of Use are governed by the laws of Canada and the province of Manitoba, without regard to conflict of law provisions. Any disputes shall be resolved in the courts of Manitoba, Canada. For users outside Canada, local consumer protection laws may provide you with additional rights.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>13. Changes to Terms</h2>
-    <p>We may update these Terms of Use from time to time. We will notify you of material changes through the app or by email. Your continued use of AI Golf Coach after changes constitutes acceptance of the updated terms.</p>
-  </div>
-
-  <div class="legal-section">
-    <h2>14. Contact Us</h2>
-    <p>For questions about these Terms: <a href="mailto:aigolfcoach@proton.me" style="color:var(--green)">aigolfcoach@proton.me</a> · aigolfcoach.app</p>
-  </div>
-
-  <p class="legal-footer">© 2026 AI Golf Coach. All rights reserved.</p>
-</div>
+</footer>
 
 <script>
-  // ── Page routing ──
-  function showPage(page) {
-    document.getElementById('main-site').style.display = 'none';
-    document.getElementById('privacy-page').classList.remove('active');
-    document.getElementById('terms-page').classList.remove('active');
-    if (page === 'main') {
-      document.getElementById('main-site').style.display = 'block';
-      window.scrollTo(0, 0);
-    } else if (page === 'privacy') {
-      document.getElementById('privacy-page').classList.add('active');
-      window.scrollTo(0, 0);
-    } else if (page === 'terms') {
-      document.getElementById('terms-page').classList.add('active');
-      window.scrollTo(0, 0);
-    }
-  }
-
   // ── Billing toggle ──
   let isAnnual = false;
   function toggleBilling() {
