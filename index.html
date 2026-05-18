@@ -48,7 +48,7 @@
 
     /* HERO */
     .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:140px 24px 100px; position:relative; overflow:hidden; }
-    .hero-bg { position:absolute; inset:0; background-image:url("AI_GC.png"); background-size:cover; background-position:center 30%; z-index:0; opacity:0.18; }
+  
     .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(6,7,9,0.65) 0%,rgba(6,7,9,0.72) 40%,var(--bg) 100%); }
     .hero-glow { position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:800px; height:600px; z-index:1; pointer-events:none; background:radial-gradient(ellipse at 50% 0%,rgba(249,115,22,0.06) 0%,transparent 60%); }
     .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; max-width:900px; }
@@ -247,7 +247,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+ 
   <div class="hero-overlay"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
